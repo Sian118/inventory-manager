@@ -1,3 +1,10 @@
+
+def list_all_items(inventory):
+    if not inventory:
+        print("Inventory is empty.")
+        return
+    for item_id, item in inventory.items():
+        print(f"ID: {item_id}, Name: {item['name']}, Quantity: {item['quantity']}, Price: {item['price']}, Category: {item['category']}, Status: {item['status']}")
 def add_item(inventory):
     try:
         item_id = input("Enter the ID of the item: ")
@@ -42,3 +49,10 @@ def mark_out_of_stock(inventory):
         return
     inventory[item_id]["status"] = "out of stock"
     print("Item marked as out of stock.")
+def delete_item(inventory):
+    item_id = input("Enter the item ID to delete: ")
+    if item_id not in inventory:
+        print("Item not found.")
+        return
+    del inventory[item_id]
+    print("Item deleted successfully.")
