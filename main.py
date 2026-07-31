@@ -1,5 +1,5 @@
 from storage import load_inventory, save_inventory
-from inventory import add_item, update_quantity, mark_out_of_stock
+from inventory import add_item, update_quantity, mark_out_of_stock, list_all_items, delete_item
 from search import search_by_category, search_by_price_range
 
 def main():
@@ -11,19 +11,25 @@ def main():
         print("3. Mark Item as Out of Stock")
         print("4. Search by Category")
         print("5. Search by Price Range")
-        print("6. Exit")
+        print("6. List All Items")
+        print("7. Delete Item")
+        print("8. Exit")
         choice = input("Enter your choice: ")
         if choice == "1":
-          add_item(inventory)
+            add_item(inventory)
         elif choice == "2":
-          update_quantity(inventory)
+            update_quantity(inventory)
         elif choice == "3":
-          mark_out_of_stock(inventory)
+            mark_out_of_stock(inventory)
         elif choice == "4":
             search_by_category(inventory)
         elif choice == "5":
             search_by_price_range(inventory)
         elif choice == "6":
+            list_all_items(inventory)
+        elif choice == "7":
+            delete_item(inventory)
+        elif choice == "8":
             save_inventory(inventory)
             print("Exiting the program.")
             break
