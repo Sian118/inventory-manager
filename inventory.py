@@ -5,6 +5,11 @@ def add_item(inventory):
         quantity = int(input("Enter the quantity of the item: "))
         price = float(input("Enter the price of the item: "))
         category = input("Enter the category of the item: ")
+
+        if quantity < 0 or price < 0:
+            print("Quantity and price cannot be negative.")
+            return
+
         inventory[item_id] = {
             "name": name,
             "quantity": quantity,
