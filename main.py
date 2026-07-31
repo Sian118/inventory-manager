@@ -1,5 +1,5 @@
 from storage import load_inventory, save_inventory
-from inventory import add_item, update_quantity, mark_out_of_stock
+from inventory import add_item, update_quantity, mark_out_of_stock, list_all_items
 from search import search_by_category, search_by_price_range
 
 def main():
